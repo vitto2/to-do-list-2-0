@@ -4,7 +4,9 @@ import 'package:to_do_02/widgets/my_text_form_field.dart';
 import 'package:to_do_02/widgets/mybutton.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  Home({super.key});
+
+  TextEditingController controller = TextEditingController();
 
   @override
   State<Home> createState() => _HomeState();
@@ -28,7 +30,9 @@ class _HomeState extends State<Home> {
             children: [
               SizedBox(
                 width: MediaQuery.of(context).size.width / 100 * 80,
-                child: const MytextForm(),
+                child: MytextForm(
+                  controllerValue: widget.controller,
+                ),
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width / 100 * 20,
@@ -44,11 +48,12 @@ class _HomeState extends State<Home> {
             ],
           ),
           Expanded(
-              child: Mylistview(
-                  leadingValue: leadingValue,
-                  textValue: textValue,
-                  trailingValue: trailingValue,
-                  itemCountValue: itemCountValue))
+            child: Mylistview(
+                leadingValue: const Icon(Icons.favorite),
+                textValue: textValue,
+                trailingValue: trailingValue,
+                itemCountValue: itemCountValue),
+          )
         ],
       ),
     );
