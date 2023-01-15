@@ -44,6 +44,7 @@ class _HomeState extends State<Home> {
                     onpressedValue: () {
                       setState(() {
                         widget.list.add(widget.controller.text);
+                        widget.controller.clear();
                       });
                     },
                     color: Colors.black,
@@ -58,6 +59,11 @@ class _HomeState extends State<Home> {
               itemCountValue: widget.list.length,
               trailingValue: const Icon(Icons.remove),
               listValue: widget.list,
+              ontapValue: () {
+                setState(() {
+                  widget.list.remove(widget.controller.value);
+                });
+              },
             ),
           )
         ],
