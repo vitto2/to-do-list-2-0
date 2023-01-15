@@ -57,7 +57,6 @@ class _HomeState extends State<Home> {
             child: ListView.builder(
               itemCount: widget.list.length,
               itemBuilder: ((context, index) => Mylisttile(
-                    leadingValue: const Icon(Icons.star_rate_rounded),
                     trailingValue: const Icon(Icons.remove),
                     ontapTrailingValue: () {
                       setState(() {
@@ -68,6 +67,7 @@ class _HomeState extends State<Home> {
                       });
                     },
                     noteValue: widget.list[index],
+                    iconLeadingValue: Icons.star,
                   )),
             ),
           ),

@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 class Mylisttile extends StatefulWidget {
   Mylisttile({
     required noteValue,
-    required leadingValue,
     required Widget trailingValue,
     required Function() ontapTrailingValue,
+    required IconData? iconLeadingValue,
     super.key,
   }) {
     title = noteValue;
-    leading = leadingValue;
+    iconLeading = iconLeadingValue;
     onTapTrailing = ontapTrailingValue;
     trailing = trailingValue;
   }
 
-  Widget? leading;
+  IconData? iconLeading;
   Widget? trailing;
   int? itemCount;
   late String title;
@@ -28,7 +28,10 @@ class _MylisttileState extends State<Mylisttile> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: widget.leading,
+      leading: GestureDetector(
+        onTap: () => {},
+        child: Icon(widget.iconLeading),
+      ),
       title: Text(widget.title),
       trailing: GestureDetector(
         onTap: widget.onTapTrailing,
