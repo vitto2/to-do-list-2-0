@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Mybutton extends StatefulWidget {
-  Mybutton(
-      {required Function() onpressedValue, required Color color, super.key}) {
+  Mybutton({
+    required Function() onpressedValue,
+    required Color color,
+    super.key,
+  }) {
     onpressed = onpressedValue;
     colorButton = color;
   }

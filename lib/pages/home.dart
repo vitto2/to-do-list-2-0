@@ -41,7 +41,11 @@ class _HomeState extends State<Home> {
                 child: Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: Mybutton(
-                    onpressedValue: () {},
+                    onpressedValue: () {
+                      setState(() {
+                        widget.list.add(widget.controller.text);
+                      });
+                    },
                     color: Colors.black,
                   ),
                 ),
@@ -50,10 +54,11 @@ class _HomeState extends State<Home> {
           ),
           Expanded(
             child: Mylistview(
-                leadingValue: const Icon(Icons.favorite),
-                itemCountValue: widget.list.length,
-                titleValue: '',
-                ),
+              leadingValue: const Icon(Icons.favorite),
+              itemCountValue: widget.list.length,
+              trailingValue: const Icon(Icons.remove),
+              listValue: widget.list,
+            ),
           )
         ],
       ),
