@@ -1,16 +1,2 @@
-# to_do_02
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Projeto to-do-list utilizado para praticar alguns dos principais widgets do flutter, além de componentização, orientação a objetos e gerenciamento de estados. Faltando apenas a implementação do icon de favorito o projeto está funcionando da seguinte forma: 
+![gif-to-do-list](https://user-images.githubusercontent.com/47305804/212567132-75e3c0eb-a1b8-4286-ae73-7d533888ef9b.gif)
