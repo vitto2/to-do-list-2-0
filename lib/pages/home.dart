@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_02/widgets/listview.dart';
+import 'package:to_do_02/widgets/my_list_tile.dart';
 import 'package:to_do_02/widgets/my_text_form_field.dart';
 import 'package:to_do_02/widgets/mybutton.dart';
 
@@ -54,18 +54,22 @@ class _HomeState extends State<Home> {
             ],
           ),
           Expanded(
-            child: Mylistview(
-              leadingValue: const Icon(Icons.favorite),
-              itemCountValue: widget.list.length,
-              trailingValue: const Icon(Icons.remove),
-              listValue: widget.list,
-              ontapValue: () {
-                setState(() {
-                  widget.list.remove(widget.controller.value);
-                });
-              },
+            child: ListView.builder(
+              itemCount: widget.list.length,
+              itemBuilder: ((context, index) => Mylisttile(
+                    leadingValue: const Icon(Icons.star_rate_rounded),
+                    trailingValue: const Icon(Icons.remove),
+                    ontapValue: () {
+                      setState(() {
+                        widget.list.isNotEmpty
+                            ? widget.list.removeAt(index)
+                            : null;
+                      });
+                    },
+                    noteValue: widget.list[index],
+                  )),
             ),
-          )
+          ),
         ],
       ),
     );
