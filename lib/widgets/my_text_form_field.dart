@@ -5,10 +5,13 @@ class MytextForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: const InputDecoration(
-        enabledBorder: OutlineInputBorder(),
-        focusedBorder: OutlineInputBorder(),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TextFormField(
+        decoration: const InputDecoration(
+          enabledBorder: OutlineInputBorder(),
+          focusedBorder: OutlineInputBorder(),
+        ),
       ),
     );
   }

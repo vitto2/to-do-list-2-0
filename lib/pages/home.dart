@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_02/widgets/my_text_form_field.dart';
+import 'package:to_do_02/widgets/mybutton.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -17,7 +19,30 @@ class _HomeState extends State<Home> {
             "To-Do List :)",
           ),
         ),
-        backgroundColor: Colors.purpleAccent,
+        backgroundColor: Colors.black,
+      ),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width / 100 * 80,
+                child: const MytextForm(),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width / 100 * 20,
+                height: 60,
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Mybutton(
+                    onpressedValue: () {},
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }
