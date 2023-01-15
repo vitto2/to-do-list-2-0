@@ -43,7 +43,9 @@ class _HomeState extends State<Home> {
                   child: Mybutton(
                     onpressedValue: () {
                       setState(() {
-                        widget.list.add(widget.controller.text);
+                        widget.controller.text.isNotEmpty
+                            ? widget.list.add(widget.controller.text)
+                            : null;
                         widget.controller.clear();
                       });
                     },
