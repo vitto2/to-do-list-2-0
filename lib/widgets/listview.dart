@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 
 class Mylistview extends StatefulWidget {
-  Mylistview(
-      {required leadingValue,
-      required String textValue,
-      required Widget trailingValue,
-      required itemCountValue,
-      super.key}) {
+  Mylistview({
+    required itemCountValue,
+    required leadingValue,
+    required String titleValue,
+    required Widget trailingValue,
+    super.key,
+  }) {
     leading = leadingValue;
-    text = textValue;
+    title = titleValue;
     trailing = trailingValue;
     itemCount = itemCountValue;
   }
 
   Widget? leading;
   Widget? trailing;
-  late String text;
+  late String title;
   int? itemCount;
 
   @override
@@ -29,7 +30,7 @@ class _MylistviewState extends State<Mylistview> {
       itemCount: widget.itemCount,
       itemBuilder: (context, index) => ListTile(
         leading: widget.leading,
-        title: Text(widget.text),
+        title: Text(widget.title),
         trailing: widget.trailing,
       ),
     );

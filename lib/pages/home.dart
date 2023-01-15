@@ -7,6 +7,7 @@ class Home extends StatefulWidget {
   Home({super.key});
 
   TextEditingController controller = TextEditingController();
+  List<String> list = [];
 
   @override
   State<Home> createState() => _HomeState();
@@ -50,9 +51,9 @@ class _HomeState extends State<Home> {
           Expanded(
             child: Mylistview(
                 leadingValue: const Icon(Icons.favorite),
-                textValue: textValue,
-                trailingValue: trailingValue,
-                itemCountValue: itemCountValue),
+                itemCountValue: widget.list.length,
+                titleValue: '',
+                ),
           )
         ],
       ),
