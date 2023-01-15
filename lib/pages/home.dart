@@ -59,9 +59,10 @@ class _HomeState extends State<Home> {
               itemBuilder: ((context, index) => Mylisttile(
                     leadingValue: const Icon(Icons.star_rate_rounded),
                     trailingValue: const Icon(Icons.remove),
-                    ontapValue: () {
+                    ontapTrailingValue: () {
                       setState(() {
-                        widget.list.isNotEmpty
+                        // ignore: prefer_is_empty
+                        widget.list.length > 0
                             ? widget.list.removeAt(index)
                             : null;
                       });

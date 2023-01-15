@@ -5,12 +5,12 @@ class Mylisttile extends StatefulWidget {
     required noteValue,
     required leadingValue,
     required Widget trailingValue,
-    required Function() ontapValue,
+    required Function() ontapTrailingValue,
     super.key,
   }) {
     title = noteValue;
     leading = leadingValue;
-    onTap = ontapValue;
+    onTapTrailing = ontapTrailingValue;
     trailing = trailingValue;
   }
 
@@ -18,7 +18,7 @@ class Mylisttile extends StatefulWidget {
   Widget? trailing;
   int? itemCount;
   late String title;
-  Function()? onTap;
+  Function()? onTapTrailing;
 
   @override
   State<Mylisttile> createState() => _MylisttileState();
@@ -31,7 +31,7 @@ class _MylisttileState extends State<Mylisttile> {
       leading: widget.leading,
       title: Text(widget.title),
       trailing: GestureDetector(
-        onTap: widget.onTap,
+        onTap: widget.onTapTrailing,
         child: widget.trailing,
       ),
     );
